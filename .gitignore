@@ -11,3 +11,6 @@ output/
 .Rproj.user/
 renv/library/
 renv/staging/
+
+# Internal documents (team names); keep local only
+docs/*.docx
