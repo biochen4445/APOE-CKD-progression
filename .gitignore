@@ -1,0 +1,13 @@
+# Patient-level data and all results stay off GitHub
+data/raw/*
+!data/raw/.gitkeep
+data/derived/
+data/simulated/
+output/
+
+# R session files
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+renv/staging/

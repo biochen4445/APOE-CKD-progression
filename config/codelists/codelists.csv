@@ -1,0 +1,99 @@
+list,code_system,code_prefix,description,status
+ckd_outcome_dx,ICD9CM,581,Nephrotic syndrome,SAP
+ckd_outcome_dx,ICD9CM,582,Chronic glomerulonephritis,SAP
+ckd_outcome_dx,ICD9CM,583,Nephritis and nephropathy NOS,SAP
+ckd_outcome_dx,ICD9CM,585,Chronic kidney disease,SAP
+ckd_outcome_dx,ICD9CM,587,Renal sclerosis NOS,SAP
+ckd_outcome_dx,ICD9CM,588,Disorders resulting from impaired renal function,SAP
+ckd_outcome_dx,ICD9CM,403,Hypertensive chronic kidney disease,SAP
+ckd_outcome_dx,ICD9CM,404,Hypertensive heart and chronic kidney disease,SAP
+ckd_outcome_dx,ICD9CM,5939,Unspecified disorder of kidney and ureter,SAP
+ckd_outcome_dx,ICD9CM,2504,Diabetes with renal manifestations,SAP
+ckd_outcome_dx,ICD9CM,V420,Kidney transplant status,SAP
+ckd_outcome_dx,ICD9CM,V451,Renal dialysis status,SAP
+ckd_outcome_dx,ICD9CM,V56,Encounter for dialysis,SAP
+ckd_outcome_dx,ICD10CM,N03,Chronic nephritic syndrome,SAP
+ckd_outcome_dx,ICD10CM,N04,Nephrotic syndrome,SAP
+ckd_outcome_dx,ICD10CM,N05,Unspecified nephritic syndrome,SAP
+ckd_outcome_dx,ICD10CM,N18,Chronic kidney disease,SAP
+ckd_outcome_dx,ICD10CM,N25,Disorders resulting from impaired renal tubular function,SAP
+ckd_outcome_dx,ICD10CM,N26,Unspecified contracted kidney,SAP
+ckd_outcome_dx,ICD10CM,I12,Hypertensive chronic kidney disease,SAP
+ckd_outcome_dx,ICD10CM,I13,Hypertensive heart and chronic kidney disease,SAP
+ckd_outcome_dx,ICD10CM,N289,Disorder of kidney and ureter unspecified,SAP
+ckd_outcome_dx,ICD10CM,E102,Type 1 diabetes with kidney complications,SAP
+ckd_outcome_dx,ICD10CM,E112,Type 2 diabetes with kidney complications,SAP
+ckd_outcome_dx,ICD10CM,E132,Other specified diabetes with kidney complications,SAP
+ckd_outcome_dx,ICD10CM,Z940,Kidney transplant status,SAP
+ckd_outcome_dx,ICD10CM,Z992,Dependence on renal dialysis,SAP
+ckd_outcome_dx,ICD10CM,Z49,Encounter for care involving renal dialysis,SAP
+ckd_outcome_proc,ICD9PROC,3995,Hemodialysis,SAP
+ckd_outcome_proc,ICD9PROC,5498,Peritoneal dialysis,SAP
+ckd_outcome_proc,ICD10PCS,5A1D70Z,Hemodialysis intermittent <6 h/day,draft-verify
+ckd_outcome_proc,ICD10PCS,5A1D80Z,Hemodialysis prolonged intermittent 6-18 h/day,draft-verify
+ckd_outcome_proc,ICD10PCS,5A1D90Z,Hemodialysis continuous >18 h/day,draft-verify
+ckd_outcome_proc,ICD10PCS,3E1M39Z,Peritoneal dialysis via irrigation,draft-verify
+aki_primary_exclude_dx,ICD9CM,584,Acute kidney failure,SAP
+aki_primary_exclude_dx,ICD9CM,586,Renal failure unspecified,SAP
+aki_primary_exclude_dx,ICD9CM,7889,Other symptoms involving urinary system,SAP
+aki_primary_exclude_dx,ICD9CM,9585,Traumatic anuria,SAP
+aki_primary_exclude_dx,ICD10CM,N17,Acute kidney failure,SAP
+aki_primary_exclude_dx,ICD10CM,N19,Unspecified kidney failure,SAP
+aki_primary_exclude_dx,ICD10CM,R39,Other symptoms involving genitourinary system,SAP
+aki_primary_exclude_dx,ICD10CM,T795,Traumatic anuria,SAP
+eskd_baseline_dx,ICD9CM,5856,End stage renal disease,draft-verify
+eskd_baseline_dx,ICD9CM,V420,Kidney transplant status,draft-verify
+eskd_baseline_dx,ICD9CM,V451,Renal dialysis status,draft-verify
+eskd_baseline_dx,ICD9CM,V56,Encounter for dialysis,draft-verify
+eskd_baseline_dx,ICD10CM,N186,End stage renal disease,draft-verify
+eskd_baseline_dx,ICD10CM,Z940,Kidney transplant status,draft-verify
+eskd_baseline_dx,ICD10CM,Z992,Dependence on renal dialysis,draft-verify
+eskd_baseline_dx,ICD10CM,Z49,Encounter for care involving renal dialysis,draft-verify
+dialysis_proc,ICD9PROC,3995,Hemodialysis,SAP
+dialysis_proc,ICD9PROC,5498,Peritoneal dialysis,SAP
+dialysis_proc,ICD10PCS,5A1D70Z,Hemodialysis intermittent <6 h/day,draft-verify
+dialysis_proc,ICD10PCS,5A1D80Z,Hemodialysis prolonged intermittent 6-18 h/day,draft-verify
+dialysis_proc,ICD10PCS,5A1D90Z,Hemodialysis continuous >18 h/day,draft-verify
+dialysis_proc,ICD10PCS,3E1M39Z,Peritoneal dialysis via irrigation,draft-verify
+dialysis_dx,ICD9CM,V451,Renal dialysis status,draft-verify
+dialysis_dx,ICD9CM,V56,Encounter for dialysis,draft-verify
+dialysis_dx,ICD10CM,Z992,Dependence on renal dialysis,draft-verify
+dialysis_dx,ICD10CM,Z49,Encounter for care involving renal dialysis,draft-verify
+transplant_proc,ICD9PROC,556,Transplant of kidney,draft-verify
+transplant_proc,ICD10PCS,0TY00Z,Transplantation of right kidney,draft-verify
+transplant_proc,ICD10PCS,0TY10Z,Transplantation of left kidney,draft-verify
+transplant_dx,ICD9CM,V420,Kidney transplant status,draft-verify
+transplant_dx,ICD10CM,Z940,Kidney transplant status,draft-verify
+diabetes_dx,ICD9CM,250,Diabetes mellitus,SAP
+diabetes_dx,ICD10CM,E10,Type 1 diabetes mellitus,SAP
+diabetes_dx,ICD10CM,E11,Type 2 diabetes mellitus,SAP
+diabetes_dx,ICD10CM,E13,Other specified diabetes mellitus,SAP
+diabetes_dx,ICD10CM,E14,Unspecified diabetes mellitus (WHO ICD-10; not in ICD-10-CM),SAP
+chd_dx,ICD9CM,410,Acute myocardial infarction,draft-verify
+chd_dx,ICD9CM,411,Other acute ischemic heart disease,draft-verify
+chd_dx,ICD9CM,412,Old myocardial infarction,draft-verify
+chd_dx,ICD9CM,413,Angina pectoris,draft-verify
+chd_dx,ICD9CM,414,Other chronic ischemic heart disease,draft-verify
+chd_dx,ICD10CM,I20,Angina pectoris,SAP
+chd_dx,ICD10CM,I21,Acute myocardial infarction,SAP
+chd_dx,ICD10CM,I22,Subsequent myocardial infarction,SAP
+chd_dx,ICD10CM,I23,Complications following acute MI,SAP
+chd_dx,ICD10CM,I24,Other acute ischemic heart diseases,SAP
+chd_dx,ICD10CM,I25,Chronic ischemic heart disease,SAP
+revasc_proc,ICD9PROC,0066,Percutaneous coronary intervention,draft-verify
+revasc_proc,ICD9PROC,360,Removal of coronary artery obstruction and stent insertion,draft-verify
+revasc_proc,ICD9PROC,361,Coronary artery bypass,draft-verify
+revasc_proc,ICD10PCS,0270,Dilation of coronary artery one artery,draft-verify
+revasc_proc,ICD10PCS,0271,Dilation of coronary artery two arteries,draft-verify
+revasc_proc,ICD10PCS,0272,Dilation of coronary artery three arteries,draft-verify
+revasc_proc,ICD10PCS,0273,Dilation of coronary artery four or more arteries,draft-verify
+revasc_proc,ICD10PCS,0210,Bypass coronary artery one artery,draft-verify
+revasc_proc,ICD10PCS,0211,Bypass coronary artery two arteries,draft-verify
+revasc_proc,ICD10PCS,0212,Bypass coronary artery three arteries,draft-verify
+revasc_proc,ICD10PCS,0213,Bypass coronary artery four or more arteries,draft-verify
+antihtn_atc,ATC,C02,Antihypertensives,SAP
+antihtn_atc,ATC,C03,Diuretics,SAP
+antihtn_atc,ATC,C07,Beta blocking agents,SAP
+antihtn_atc,ATC,C08,Calcium channel blockers,SAP
+antihtn_atc,ATC,C09,Agents acting on the renin-angiotensin system,SAP
+glucose_lowering_atc,ATC,A10,Drugs used in diabetes,SAP

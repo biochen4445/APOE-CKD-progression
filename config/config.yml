@@ -1,0 +1,93 @@
+# =============================================================================
+# APOE x CKD progression -- analysis configuration
+# Every analytic choice that the SAP fixes (or leaves open) lives here, so the
+# scripts contain no hard-coded thresholds. Change a value here, rerun run_all.R.
+# SAP reference: SAP v0.1 (HL, 2026-09-30); section numbers refer to that version.
+# =============================================================================
+
+project: "APOE x CKD progression (EMR adaptation of Hsu et al., JAMA 2005)"
+sap_version: "v0.1-HL (2026-09-30)"
+seed: 20260914
+
+# ---- Data source ------------------------------------------------------------
+# "simulated": synthetic data from sim/simulate_data.R (safe to share on GitHub)
+# "emr"      : real CMUH iHi extracts placed in data/raw/ (never committed)
+data_source: "simulated"
+paths:
+  raw_emr: "data/raw"
+  raw_simulated: "data/simulated"
+  derived: "data/derived"
+  output: "output"
+  codelists: "config/codelists"
+
+# EMR end-of-data date (SAP Sec. 7 open item: EMR data start and end dates). Placeholder.
+emr_end_date: "2025-12-31"
+
+# ---- Cohort (SAP Sec. 2) --------------------------------------------------------
+cohort:
+  age_min: 45            # inclusive
+  age_max: 65            # inclusive: age at index < age_max + 1
+  index_setting: "OPD"   # primary: outpatient creatinine only; "ANY" = sensitivity
+  severe_cr_male: 2.0    # exclude index creatinine >= this (mg/dL)
+  severe_cr_female: 1.8
+  # Optional design features removed in SAP v0.1-HL (see docs/SAP_review_v0.1_HL.md)
+  delayed_entry: false   # A3: entry = max(index_date, consent_date); needs person.consent_date
+  kinship_method: "none" # A2: "none" | "unrelated" (keep 1 per family) | "cluster" (robust SE); needs family_id
+
+# ---- APOE (SAP Sec. 3) ----------------------------------------------------------
+apoe:
+  # Input columns hold the dosage/count of the allele that defines e4 at rs429358
+  # and e2 at rs7412. Verify strand/allele coding against the array manifest.
+  rs429358_counted_allele: "C"   # C = e4-defining
+  rs7412_counted_allele: "T"     # T = e2-defining
+  hardcall_tolerance: 0.1        # imputed dosage must be within 0.1 of 0/1/2
+  min_info: 0.8                  # minimum imputation INFO if column present
+  genotype_order: ["e2/e2", "e2/e3", "e3/e3", "e2/e4", "e3/e4", "e4/e4"]
+  reference_genotype: "e3/e3"
+
+# ---- eGFR -------------------------------------------------------------------
+egfr:
+  primary_equation: "ckdepi2021"   # SAP Sec. 7 open item; "mdrd" = sensitivity (Sec. 6.5)
+  mdrd_constant: 175               # IDMS-traceable; JAMA 2005 used 186.3 on calibrated Cr
+
+# ---- Outcomes (SAP Sec. 4) ------------------------------------------------------
+outcome:
+  cr_rise_mgdl: 0.4
+  confirm_days: 90
+  require_confirmation: true      # false = sensitivity (Sec. 6.5)
+  confirm_rule: "next"            # "next" = first value >= 90 d later must also qualify; "any" = any later value
+  cr_rise_setting: "OPD"
+  hosp_event_date: "discharge"    # "discharge" (JAMA 2005) or "admission"
+  death_dx_window_days: 30        # CKD death = CKD code within this many days before death, or cause-of-death code
+  egfr_decline_fraction: 0.40     # secondary outcome
+  egfr_threshold: 60              # secondary outcome: incident eGFR < 60
+  eskd_dialysis_days: 90
+
+# ---- Covariate windows, days relative to index (SAP Sec. 5) ---------------------
+windows:
+  lab_before: 365
+  lab_after: 30
+  med_before: 90
+  vitals_halfwidth: 180            # BP and BMI (BMI window not specified in SAP; review B5)
+  dm_hba1c: 6.5
+  dm_fpg: 126
+  dm_random_glucose: 200
+
+# ---- Models (SAP Sec. 5 model definitions, Sec. 6.3) -----------------------------------------
+models:
+  m1: ["age", "sex"]
+  m2: ["age", "sex", "bmi", "diabetes", "sbp", "dbp", "antihtn", "chd", "egfr_index"]
+  m3: ["age", "sex", "bmi", "diabetes", "sbp", "dbp", "antihtn", "chd", "egfr_index", "hdl", "ldl", "log_tg"]
+  common_sample: true      # fit Model 1-3 on the Model 3 complete-case sample (review A4)
+  adjust_pcs: false        # PC1-10 removed in SAP v0.1-HL; true adds them to every model
+  n_pcs: 10
+  ph_alpha: 0.05
+  time_split_years: [3, 6] # review B6
+
+# ---- Power (SAP Sec. 6.6) -------------------------------------------------------
+power:
+  alpha: 0.05
+  power: 0.80
+  freq_e2: 0.08
+  freq_e4: 0.09
+  hr_grid: [0.80, 0.85, 0.90, 1.10, 1.15, 1.20]
